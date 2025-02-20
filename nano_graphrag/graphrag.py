@@ -1,5 +1,6 @@
 import asyncio
 import os
+import traceback
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from functools import partial
@@ -312,6 +313,10 @@ class GraphRAG:
             await self.text_chunks.upsert(inserting_chunks)
         except Exception as e:
             logger.error(f"!!!!!Error in inserting: {e} ")
+            logger.error(f"错误类型: {type(e).__name__}")
+            logger.error(f"错误信息: {str(e)}")
+            logger.error("详细堆栈跟踪:")
+            logger.error(traceback.format_exc())
             raise e
         finally:
             # await self._insert_done()

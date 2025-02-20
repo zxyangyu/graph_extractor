@@ -6,9 +6,6 @@ from nano_graphrag.base import BaseKVStorage
 from nano_graphrag._utils import compute_args_hash
 from nano_graphrag._utils import encode_string_by_tiktoken
 
-logging.basicConfig(level=logging.WARNING)
-logging.getLogger("nano-graphrag").setLevel(logging.INFO)
-
 
 class GraphExtractor:
     def __init__(self, api_key, base_url, model):

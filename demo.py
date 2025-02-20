@@ -1,6 +1,9 @@
 import os
-
+import logging
 from graph_extractor import GraphExtractor
+
+logging.basicConfig(level=logging.WARNING)
+
 
 if __name__ == "__main__":
     API_KEY = os.environ["API_KEY"]
